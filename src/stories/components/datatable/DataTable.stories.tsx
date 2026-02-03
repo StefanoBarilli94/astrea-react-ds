@@ -200,7 +200,7 @@ const CustomHeader = () => {
             }}
         >
             <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100% !important' }}>
-                <Typography variant="h4">Titolo</Typography>
+                <Typography variant="h4">Title</Typography>
                 <NsButton variant="contained" color="primary">
                     Button
                 </NsButton>
@@ -406,7 +406,7 @@ const TemplateClient: StoryFn<typeof NsDataGrid> = (args) => {
     const data = useMemo(() => makeData(200), []);
     const [selectedRows, setSelectedRows] = React.useState<Record<string, Person>>({});
     useEffect(() => {
-        // Quando i dati sono pronti, seleziona la prima riga
+        // When the data is ready, select the first row
         if (data.length > 0) {
             setSelectedRows({ [data[0].id]: data[0] });
         }

@@ -52,7 +52,7 @@ export const CustomComponentUserPanel: Story = {
     },
     userPanelMenuItems: (
       <Stack direction="column" spacing={2} alignItems="center" sx={{p: '10px'}}>
-        <span>Componente</span>
+        <span>Component</span>
         <Button color="primary" variant="contained">Submit</Button>
       </Stack>
     ),

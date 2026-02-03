@@ -35,7 +35,7 @@ const Template: StoryFn<typeof NsFeedback> = (args) => {
   return (
     <>
       <Container maxWidth={false}>
-        Clicca il pulsante per mostrare la notifica.
+        Click the button to show the notification.
         <Button
           style={{ marginLeft: '30%', marginTop: '3%', width: '40%' }}
           variant="outlined"
@@ -43,7 +43,7 @@ const Template: StoryFn<typeof NsFeedback> = (args) => {
             setIsOpen(true);
           }}
         >
-          Invia Notifica
+          Send Notification
         </Button>
         <Divider sx={{ my: 4 }} />
         <NsFeedback

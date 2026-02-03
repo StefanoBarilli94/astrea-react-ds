@@ -15,16 +15,16 @@ const Template: StoryFn<any> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-    title: 'Cambia questo titolo per vedere come viene sovrascritto',
-    description: 'Cambia questo contenuto per vedere come viene sovrascritto',
+    title: 'Change this title to see how it is overridden',
+    description: 'Change this content to see how it is overridden',
     showDetailButton: false,
     detailLink: 'https://www.netservice.it',
 };
 
 export const WithDetailButton = Template.bind({});
 WithDetailButton.args = {
-    title: 'Cambia questo titolo per vedere come viene sovrascritto',
-    description: 'Cambia questo contenuto per vedere come viene sovrascritto',
+    title: 'Change this title to see how it is overridden',
+    description: 'Change this content to see how it is overridden',
     showDetailButton: true,
     detailLink: 'https://www.netservice.it',
 };
