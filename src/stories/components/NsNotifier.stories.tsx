@@ -12,11 +12,11 @@ export default {
     },
     argTypes: {
         message: {
-            label: 'Messaggio',
+            label: 'Message',
             type: 'string',
         },
         type: {
-            label: 'Tipologia',
+            label: 'Type',
             control: { type: 'radio' },
             options: ['info', 'success', 'warning', 'error'],
         },
@@ -28,7 +28,7 @@ const Template: StoryFn<typeof NsNotifier> = (args) => {
         const { enqueueSnackbar, closeSnackbar } = useSnackbar();
         return (
             <Container>
-                <Typography component="p">Clicca il pulsante per mostrare la notifica.</Typography>
+                <Typography component="p">Click the button to show the notification.</Typography>
                 <Box sx={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '100px' }} textAlign="center">
                     <Button
                         variant="contained"
@@ -62,12 +62,12 @@ const Template: StoryFn<typeof NsNotifier> = (args) => {
     );
 };
 
-export const Notifiche = Template.bind({});
-Notifiche.args = {
+export const Notifications = Template.bind({});
+Notifications.args = {
     variant: 'filled',
 };
-export const NotificheOutlined = Template.bind({});
-NotificheOutlined.args = {
+export const NotificationsOutlined = Template.bind({});
+NotificationsOutlined.args = {
     variant: 'outlined',
     anchorOrigin: { horizontal: 'left', vertical: 'top' },
 };

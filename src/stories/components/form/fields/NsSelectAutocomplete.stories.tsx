@@ -46,16 +46,21 @@ const SingleSelectTemplate: StoryFn<typeof NsSelectAutocomplete> = (args) => {
     );
 };
 
-const products: SelectItem[] = [
-    { label: 'Laptop', value: 'laptop', groupDescrizione: 'Electronics', descrizione: 'High-performance laptop' },
+type SelectItemWithDescription = SelectItem & {
+    groupDescription?: string;
+    description?: string;
+};
+
+const products: SelectItemWithDescription[] = [
+    { label: 'Laptop', value: 'laptop', groupDescription: 'Electronics', description: 'High-performance laptop' },
     {
         label: 'Smartphone',
         value: 'smartphone',
-        groupDescrizione: 'Electronics',
-        descrizione: 'Latest model smartphone',
+        groupDescription: 'Electronics',
+        description: 'Latest model smartphone',
     },
-    { label: 'T-shirt', value: 'tshirt', groupDescrizione: 'Clothing', descrizione: 'Comfortable cotton t-shirt' },
-    { label: 'Jeans', value: 'jeans', groupDescrizione: 'Clothing', descrizione: 'Stylish denim jeans' },
+    { label: 'T-shirt', value: 'tshirt', groupDescription: 'Clothing', description: 'Comfortable cotton t-shirt' },
+    { label: 'Jeans', value: 'jeans', groupDescription: 'Clothing', description: 'Stylish denim jeans' },
 ];
 
 const GroupedSelectTemplate: StoryFn<typeof NsSelectAutocomplete> = (args) => {
@@ -77,13 +82,13 @@ const GroupedSelectTemplate: StoryFn<typeof NsSelectAutocomplete> = (args) => {
                         <NsSelectAutocomplete
                             multiple
                             options={products}
-                            groupBy={(option: SelectItem) => option.groupDescrizione || ''}
-                            getOptionLabel={(option: SelectItem) => option.descrizione || ''}
+                            groupBy={(option: SelectItem) => (option as SelectItemWithDescription).groupDescription || ''}
+                            getOptionLabel={(option: SelectItem) => (option as SelectItemWithDescription).description || ''}
                             // onChange={handleChange}
                             changed={handleChange}
                             disableCloseOnSelect
                             renderOption={(props, option: SelectItem, { selected }) => (
-                                <li {...props}>{option.descrizione}</li>
+                                <li {...props}>{(option as SelectItemWithDescription).description}</li>
                             )}
                             renderInput={(params) => (
                                 <TextField {...params} variant="outlined" label="Select Products" />
@@ -95,7 +100,7 @@ const GroupedSelectTemplate: StoryFn<typeof NsSelectAutocomplete> = (args) => {
             </NsForm>
             <ul>
                 {selectedProducts.map((product: SelectItem) => (
-                    <li key={product.value}>{product.descrizione}</li>
+                    <li key={product.value}>{(product as SelectItemWithDescription).description}</li>
                 ))}
             </ul>
         </Box>
@@ -124,8 +129,8 @@ const CheckboxSelectTemplate: StoryFn<typeof NsSelectAutocomplete> = (args) => {
                     <NsSelectAutocomplete
                         multiple
                         options={products}
-                        groupBy={(option: SelectItem) => option.groupDescrizione || ''}
-                        getOptionLabel={(option: SelectItem) => option.descrizione || ''}
+                        groupBy={(option: SelectItem) => (option as SelectItemWithDescription).groupDescription || ''}
+                        getOptionLabel={(option: SelectItem) => (option as SelectItemWithDescription).description || ''}
                         onChange={handleChange}
                         disableCloseOnSelect
                         renderOption={(props, option: SelectItem, { selected }) => (
@@ -136,7 +141,7 @@ const CheckboxSelectTemplate: StoryFn<typeof NsSelectAutocomplete> = (args) => {
                                         checked={selected}
                                         onChange={() => handleCheckboxChange(option)}
                                     />
-                                    {option.descrizione}
+                                    {(option as SelectItemWithDescription).description}
                                 </label>
                             </li>
                         )}

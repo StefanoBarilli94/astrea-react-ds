@@ -272,7 +272,7 @@ export const FullscreenModal = TemplateCustomizable.bind({});
 FullscreenModal.args = {
     open: false,
     title: 'Full screen modal',
-    content: 'Contenuto della modal a schermo intero.',
+    content: 'Fullscreen modal content.',
     fullScreen: true,
     showCancelButton: true,
     showSubmitButton: false,

@@ -49,7 +49,7 @@ const TemplateInsidePage: StoryFn<NsModalProps> = (args) => {
     // const [containerReady, setContainerReady] = useState(false);
 
     // useEffect(() => {
-    //   // Imposta il container quando il componente è montato
+    //   // Set the container when the component is mounted
     //   if (containerRef.current) {
     //     setContainerReady(true);
     //   }
@@ -99,8 +99,8 @@ ActionsModal.args = {
 };
 export const SidebarModal = Template.bind({});
 SidebarModal.args = {
-    title: 'Titolo Drawer',
-    content: 'Contenuto del drawer.',
+    title: 'Drawer title',
+    content: 'Drawer content.',
     useDrawer: true,
     drawerPosition: 'right',
     showCancelButton: false,
@@ -108,8 +108,8 @@ SidebarModal.args = {
 };
 export const FullscreenModal = Template.bind({});
 FullscreenModal.args = {
-    title: 'Titolo Modal a Schermo Intero',
-    content: 'Contenuto della modal a schermo intero.',
+    title: 'Fullscreen modal title',
+    content: 'Fullscreen modal content.',
     fullScreen: true,
     showCancelButton: true,
     showConfirmButton: true,

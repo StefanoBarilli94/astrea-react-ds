@@ -88,7 +88,7 @@ const Template: StoryFn<NsAccordionProps & { expanded: boolean; onChange: () => 
 export const Default = Template.bind({});
 Default.args = {
     title: 'Change this content to see how it gets overwritten',
-    children: <NsAccordionDetails>Change this title to see how it gets overwritten</NsAccordionDetails>, // Passa il contenuto come children
+    children: <NsAccordionDetails>Change this title to see how it gets overwritten</NsAccordionDetails>, // Pass content as children
     expanded: true,
     icon: <FilterAltIcon />,
     typographyProps: {
